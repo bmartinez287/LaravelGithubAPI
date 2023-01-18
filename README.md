@@ -35,13 +35,13 @@ Following the quick start guide, I took a few shorcuts to provide developers wit
 
 1. Clone the project anywhere on your local machine.
 2. Make sure docker desktop and deamon are installed and avaliable. Make sure to `cd LaravelGithubAPI` everthing else is run from whithin that directory.
-3. Then create a .env file at the root of the folder and add the enviroment variables (super important or it might not work). Most variables are what you get from the quickstarted execpt for one GITHUB_TOKEN. That either you used someone token or create your own. Without the authetication will fail.
+3. Then create a `.env` file at the root of the folder and add the enviroment variables (super important or it might not work). Most variables are what you get from the quickstarted execept for one GITHUB_TOKEN. Either you use someone's token or create your own. Without it the authetication will fail.
 4. Run the folowing command `curl -s "https://gist.githubusercontent.com/bmartinez287/61e647924bfd89739407f151bf5cff58/raw/02be39ff2c1de9870d2d6cf50eb40cc8cc02f5ec/laravel.build" | bash`
 This command was inspired by laravel's own https://laravel.build/example-app
 5. Now its time to run `./vendor/bin/sail up`
-6. As noted that command can be alias so its easier to run.
+6. As noted on the quick start, that command can be alias so its easier to run.
 7. If everything is running we can hit localhost and see the stantard laravel welcome screen.
-8. Then we must run `./vendor/bin/sail artisan migrate:refresh --seed` this command will preload the database with the search api query from github.
+8. Then we must run `./vendor/bin/sail artisan migrate:refresh --seed` this command will preload the database with the search api query from github and create our custom table.
 9. Then we can go to localhost/vanderbilt and see our website in action.
 10. To see more details about each item click on the title.
 11. To load a fresh set of data click on the reload button.
