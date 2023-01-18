@@ -29,38 +29,26 @@ You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Building this project locally
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Following the quick start guide, I took a few shorcuts to provide developers with a fast an easy experience locally.
 
-### Premium Partners
+1. Clone the project anywhere on your local machine.
+2. Make sure docker desktop and deamonare installed and avaliable
+3. Run the folowing command`curl -s "https://gist.githubusercontent.com/bmartinez287/61e647924bfd89739407f151bf5cff58/raw/34f44e1124395b6af67efbcfa0b7a948439f0ba1/laravel.build" | bash`
+This command was inspired by laravels own https://laravel.build/example-app
+4. Then make sure to create .env file at the root of the program and add the enviroment variables (super important or it might not work). Most variables are what you get from the quickstarted execpt for one GITHUB_TOKEN. That either you used someone token or create your own. Without the authetication will fail.
+5. Now its time to run `./vendor/bin/sail up`
+6. As noted that command can be alias so its easier to run.
+7. If everything is running we can hit localhost and see the stantard laravel welcome screen.
+8. Then we must run `./vendor/bin/sail artisan migrate:refresh --seed` this command will preload the database with the search api query from github.
+9. Then we can go to localhost/vanderbilt and see our website in action.
+10. To see more details about each item click on the title.
+11. To load a fresh set of data click on the reload button.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Common error
+If you did a `./vendor/bin/sail up` before adding the `.env` file you likely break the connection to the database. To restore it delete the mysql volume inside of docker desktop add the  `.env` file with the variables and `./vendor/bin/sail up`.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The pet project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
