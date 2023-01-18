@@ -15,18 +15,14 @@ class VanderbiltController extends Controller
      */
     public function index()
     {
-
-
         $vanderbilt = Vanderbilt::orderBy('id', 'asc')
                ->take(30)
                ->get();
-               
-        
+
+
         return view('vanderbilt.index', [
             'phpProjects' => $vanderbilt,
         ]);
-
-
     }
 
     /**
@@ -76,10 +72,9 @@ class VanderbiltController extends Controller
      */
     public function show(Vanderbilt $vanderbilt)
     {
-
-            return view('vanderbilt.project', [
-                'phpProjects' => Vanderbilt::find($vanderbilt)
-            ]);
+        return view('vanderbilt.project', [
+            'phpProjects' => Vanderbilt::find($vanderbilt)
+        ]);
     }
 
     /**

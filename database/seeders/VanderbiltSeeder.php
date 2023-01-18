@@ -22,7 +22,6 @@ class VanderbiltSeeder extends Seeder
             'Authorization' => config('services.github'),
             'Accept' => 'application/vnd.github+json'
         ])->get('https://api.github.com/search/repositories?q=php+language:php&sort=stars&order=desc')->json();
-        // dd($phpProjects['items']);
 
         foreach ($phpProjects['items'] as $phprepo) {
             $input = [
@@ -35,8 +34,5 @@ class VanderbiltSeeder extends Seeder
             ];
             Vanderbilt::create($input);
         }
-
-
-
     }
 }

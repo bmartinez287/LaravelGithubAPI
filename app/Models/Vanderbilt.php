@@ -21,5 +21,4 @@ class Vanderbilt extends Model
         'number_stars',
         'ghproject_id'
     ];
-
 }
