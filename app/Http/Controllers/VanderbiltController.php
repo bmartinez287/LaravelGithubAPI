@@ -15,41 +15,18 @@ class VanderbiltController extends Controller
      */
     public function index()
     {
-        //
-        // $phpProjects = Http::withHeaders([
-        //     'Authorization' => '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',
-        //     'Accept' => 'application/vnd.github+json'
-        // ])->get('https://api.github.com/search/repositories?q=php+language:php&sort=stars&order=desc')->json();
-        // // dd($phpProjects['items']);
 
-        // foreach ($phpProjects['items'] as $phprepo) {
-        //     $input = [
-        //         'name' => $phprepo['full_name'],
-        //         // 'description' => 'Testing in the mean time while bug is worked out.',
-        //         'description' => $phprepo['description'],
-        //         'number_stars' => $phprepo['stargazers_count'],
-        //         'url' => $phprepo['html_url'],
-        //         'ghproject_id' => $phprepo['id']
-        //     ];
-        //     Vanderbilt::create($input);
-        // }
 
         $vanderbilt = Vanderbilt::orderBy('id', 'asc')
                ->take(30)
                ->get();
                
-               
-        //        order_by('datetime', 'desc')
-        // ->limit(30);;
+        
         return view('vanderbilt.index', [
             'phpProjects' => $vanderbilt,
         ]);
 
 
-        // dd($Vanderbilt->data);
-        // return view('vanderbilt.index', [
-        //     'phpProjects' => $phpProjects['items'],
-        // ]);
     }
 
     /**
@@ -70,20 +47,16 @@ class VanderbiltController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Removes old records
         Vanderbilt::truncate();
         $phpProjects = Http::withHeaders([
             'Authorization' => config('services.github'),
             'Accept' => 'application/vnd.github+json'
         ])->get('https://api.github.com/search/repositories?q=php+language:php&sort=stars&order=desc')->json();
-        
-        
-        // dd($phpProjects['items']);
 
         foreach ($phpProjects['items'] as $phprepo) {
             $input = [
                 'name' => $phprepo['full_name'],
-                // 'description' => 'Testing in the mean time while bug is worked out.',
                 'description' => $phprepo['description'],
                 'number_stars' => $phprepo['stargazers_count'],
                 'url' => $phprepo['html_url'],
@@ -104,24 +77,9 @@ class VanderbiltController extends Controller
     public function show(Vanderbilt $vanderbilt)
     {
 
-            // dd($vanderbilt);
-            // return view('vanderbilt.project');
             return view('vanderbilt.project', [
                 'phpProjects' => Vanderbilt::find($vanderbilt)
             ]);
-        
-        
-        //
-        // $vanderbilt = Vanderbilt::orderBy('id', 'asc')
-        //        ->take(30)
-        //        ->get();
-               
-               
-        // //        order_by('datetime', 'desc')
-        // // ->limit(30);;
-        // return view('vanderbilt.index', [
-        //     'phpProjects' => $vanderbilt,
-        // ]);
     }
 
     /**

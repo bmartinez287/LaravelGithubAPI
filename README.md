@@ -35,7 +35,7 @@ Following the quick start guide, I took a few shorcuts to provide developers wit
 
 1. Clone the project anywhere on your local machine.
 2. Make sure docker desktop and deamonare installed and avaliable
-3. Run the folowing command`curl -s "https://gist.githubusercontent.com/bmartinez287/61e647924bfd89739407f151bf5cff58/raw/34f44e1124395b6af67efbcfa0b7a948439f0ba1/laravel.build" | bash`
+3. Run the folowing command `curl -s "https://gist.githubusercontent.com/bmartinez287/61e647924bfd89739407f151bf5cff58/raw/34f44e1124395b6af67efbcfa0b7a948439f0ba1/laravel.build" | bash`
 This command was inspired by laravels own https://laravel.build/example-app
 4. Then make sure to create .env file at the root of the program and add the enviroment variables (super important or it might not work). Most variables are what you get from the quickstarted execpt for one GITHUB_TOKEN. That either you used someone token or create your own. Without the authetication will fail.
 5. Now its time to run `./vendor/bin/sail up`
