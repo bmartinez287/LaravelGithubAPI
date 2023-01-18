@@ -34,10 +34,10 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 Following the quick start guide, I took a few shorcuts to provide developers with a fast an easy experience locally.
 
 1. Clone the project anywhere on your local machine.
-2. Make sure docker desktop and deamonare installed and avaliable
-3. Run the folowing command `curl -s "https://gist.githubusercontent.com/bmartinez287/61e647924bfd89739407f151bf5cff58/raw/34f44e1124395b6af67efbcfa0b7a948439f0ba1/laravel.build" | bash`
+2. Make sure docker desktop and deamon are installed and avaliable
+3. Then make sure to create .env file at the root of the program and add the enviroment variables (super important or it might not work). Most variables are what you get from the quickstarted execpt for one GITHUB_TOKEN. That either you used someone token or create your own. Without the authetication will fail.
+4. Run the folowing command `curl -s "https://gist.githubusercontent.com/bmartinez287/61e647924bfd89739407f151bf5cff58/raw/34f44e1124395b6af67efbcfa0b7a948439f0ba1/laravel.build" | bash`
 This command was inspired by laravels own https://laravel.build/example-app
-4. Then make sure to create .env file at the root of the program and add the enviroment variables (super important or it might not work). Most variables are what you get from the quickstarted execpt for one GITHUB_TOKEN. That either you used someone token or create your own. Without the authetication will fail.
 5. Now its time to run `./vendor/bin/sail up`
 6. As noted that command can be alias so its easier to run.
 7. If everything is running we can hit localhost and see the stantard laravel welcome screen.
